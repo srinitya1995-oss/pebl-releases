@@ -1,16 +1,28 @@
 # Pebl Releases
 
-Public download artifacts for **[Pebl](https://peblapp.com)** — the desktop wellness companion that knows when to speak.
+Public download artifacts for **[Pebl](https://peblapp.com)**, a desktop wellness companion that knows when to speak.
 
-The Pebl application source lives in a private repo. This repo exists to host the signed DMG and auto-updater manifest for public download.
+The Pebl application source lives in a private repo. This repo hosts the DMG and the auto-updater manifest for public download.
 
-## Download the latest version
+## Download
 
-Visit **[peblapp.com](https://peblapp.com)** or grab the installer directly:
+Easiest path:
 
-**[→ Pebl for Mac (latest)](https://github.com/srinitya1995-oss/pebl-releases/releases/latest)**
+```
+brew install --cask srinitya1995-oss/pebl/pebl
+```
 
-Universal binary — native on both Intel and Apple Silicon Macs. Requires macOS 12 (Monterey) or later.
+Or grab the DMG directly:
+
+**[Latest release](https://github.com/srinitya1995-oss/pebl-releases/releases/latest)**
+
+Requires macOS 12 (Monterey) or later.
+
+## Notes on the build
+
+The current build is **Apple Silicon only**. Universal (Intel + Apple Silicon) returns in v0.5.0 once a build-config issue with our prebuilt native dependency is resolved. Intel users on macOS 12+ should stay on v0.4.0 in the meantime.
+
+The build is **unsigned and unnotarized**. The Homebrew cask handles this automatically by stripping the quarantine attribute on install. If you download the DMG directly instead, macOS Gatekeeper will block first launch; right-click the app, choose Open, then "Open Anyway." Signing is on the roadmap.
 
 ## License
 
